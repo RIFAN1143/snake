@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snake Game</title>
+  <style>
+    /* General styling */
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #1d2b64, #f8cdda);
+      color: #fff;
+    }
+
+    h1 {
+      font-size: 6vw; /* Adjust title size for mobile */
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    canvas {
+      border: 4px solid #fff;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+      background-color: #111;
+    }
+
+    /* Responsive canvas for smaller screens */
+    @media (max-width: 600px) {
+      canvas {
+        width: 90vw;
+        height: 90vw;
+      }
+    }
+
+    /* Controls container */
+    .controls {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .horizontal-controls {
+      display: flex;
+      justify-content: space-between;
+      width: 50%; /* Adjust width for mobile screens */
+    }
+
+    /* Button styling */
+    .control-button {
+      background-color: #444;
+      border: 2px solid #fff;
+      border-radius: 10px;
+      color: white;
+      font-size: 5vw; /* Adjust button text size for mobile */
+      width: 5px; /* Button size relative to screen width */
+      height: 5px;
+      margin: 5px;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      transition: transform 0.2s, background-color 0.2s;
+    }
+
+    .control-button:hover {
+      background-color: #666;
+      transform: scale(1.1);
+    }
+
+    .control-button:active {
+      background-color: #888;
+      transform: scale(0.95);
+    }
+
+    @media (max-width: 600px) {
+      .control-button {
+        width: 20vw;
+        height: 20vw;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Snake Game</h1>
+  <canvas id="gameCanvas" width="400" height="400"></canvas>
+  <div class="controls">
+    <button id="up" class="control-button">↑</button>
+    <div class="horizontal-controls">
+      <button id="left" class="control-button">←</button>
+      <button id="right" class="control-button">→</button>
+    </div>
+    <button id="down" class="control-button">↓</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
